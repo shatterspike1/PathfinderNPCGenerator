@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<raceTraitData>
+
+  
+  <!--BEGIN HUMAN TRAITS-->
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>AdoptiveParentage</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>AquaticAncestry</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>Awareness</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>ComprehensiveEducation</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>DualTalent</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>EyeForTalent</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>FocusedStudy</trait>
+  </raceTrait>
+
+  <raceTrait>
+    <raceName>Human</raceName>
+    <trait>GiantAncestry</trait>
+  </raceTrait>
+  <!--END HUMAN TRAITS-->
+  
+</raceTraitData>
