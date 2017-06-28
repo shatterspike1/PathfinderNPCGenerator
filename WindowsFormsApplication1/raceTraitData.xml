@@ -5,42 +5,51 @@
   <!--BEGIN HUMAN TRAITS-->
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>AdoptiveParentage</trait>
+    <trait>Adoptive Parentage</trait>
+    <replaces>BonusFeat</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>AquaticAncestry</trait>
+    <trait>Aquatic Ancestry</trait>
+    <replaces>Skilled</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
     <trait>Awareness</trait>
+    <replaces>BonusFeat</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>ComprehensiveEducation</trait>
+    <trait>Comprehensive Education</trait>
+    <replaces>Skilled</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>DualTalent</trait>
+    <trait>Dual Talent</trait>
+    <!--<replaces>BonusFeat</replaces>-->
+    <replaces>Skilled</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>EyeForTalent</trait>
+    <trait>Eye For Talent</trait>
+    <replaces>BonusFeat</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>FocusedStudy</trait>
+    <trait>Focused Study</trait>
+    <replaces>BonusFeat</replaces>
   </raceTrait>
 
   <raceTrait>
     <raceName>Human</raceName>
-    <trait>GiantAncestry</trait>
+    <trait>Giant Ancestry</trait>
+    <replaces>Skilled</replaces>
   </raceTrait>
   <!--END HUMAN TRAITS-->
   

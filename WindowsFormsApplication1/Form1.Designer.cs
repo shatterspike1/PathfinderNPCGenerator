@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Data;
 
-namespace WindowsFormsApplication1
+namespace PathfinderNPCGenerator
 {
     partial class PF
     {
@@ -34,7 +34,6 @@ namespace WindowsFormsApplication1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.strengthBox = new System.Windows.Forms.NumericUpDown();
             this.dexterityBox = new System.Windows.Forms.NumericUpDown();
             this.constitutionBox = new System.Windows.Forms.NumericUpDown();
@@ -64,11 +63,10 @@ namespace WindowsFormsApplication1
             this.la_templateBox1 = new System.Windows.Forms.Label();
             this.la_templateBox2 = new System.Windows.Forms.Label();
             this.la_templateBox3 = new System.Windows.Forms.Label();
-            this.racialTraitBox = new System.Windows.Forms.ListBox();
             this.raceTraitData = new System.Data.DataSet();
             this.dataTable1 = new System.Data.DataTable();
             this.raceBox = new System.Windows.Forms.ComboBox();
-            this.bi_raceCollection = new System.Windows.Forms.BindingSource(this.components);
+            this.racialTraitBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.strengthBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dexterityBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.constitutionBox)).BeginInit();
@@ -78,7 +76,6 @@ namespace WindowsFormsApplication1
             ((System.ComponentModel.ISupportInitialize)(this.raceCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raceTraitData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bi_raceCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // strengthBox
@@ -432,16 +429,6 @@ namespace WindowsFormsApplication1
             this.la_templateBox3.TabIndex = 30;
             this.la_templateBox3.Text = "Template 3";
             // 
-            // racialTraitBox
-            // 
-            this.racialTraitBox.FormattingEnabled = true;
-            this.racialTraitBox.Location = new System.Drawing.Point(382, 16);
-            this.racialTraitBox.Name = "racialTraitBox";
-            this.racialTraitBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.racialTraitBox.Size = new System.Drawing.Size(270, 121);
-            this.racialTraitBox.TabIndex = 31;
-            this.racialTraitBox.SelectedIndexChanged += new System.EventHandler(this.racialTraitBox_SelectedIndexChanged);
-            // 
             // raceTraitData
             // 
             this.raceTraitData.DataSetName = "raceTraitData";
@@ -463,14 +450,24 @@ namespace WindowsFormsApplication1
             this.raceBox.TabIndex = 32;
             this.raceBox.SelectedIndexChanged += new System.EventHandler(this.raceBox_SelectedIndexChanged);
             // 
+            // racialTraitBox
+            // 
+            this.racialTraitBox.FormattingEnabled = true;
+            this.racialTraitBox.Location = new System.Drawing.Point(384, 10);
+            this.racialTraitBox.Name = "racialTraitBox";
+            this.racialTraitBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.racialTraitBox.Size = new System.Drawing.Size(268, 69);
+            this.racialTraitBox.TabIndex = 33;
+            this.racialTraitBox.SelectedIndexChanged += new System.EventHandler(this.racialTraitBox_SelectedIndexChanged);
+            // 
             // PF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(664, 623);
-            this.Controls.Add(this.raceBox);
             this.Controls.Add(this.racialTraitBox);
+            this.Controls.Add(this.raceBox);
             this.Controls.Add(this.la_templateBox3);
             this.Controls.Add(this.la_templateBox2);
             this.Controls.Add(this.la_templateBox1);
@@ -510,7 +507,6 @@ namespace WindowsFormsApplication1
             ((System.ComponentModel.ISupportInitialize)(this.raceCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raceTraitData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bi_raceCollection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,7 +569,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label la_templateBox1;
         private System.Windows.Forms.Label la_templateBox2;
         private System.Windows.Forms.Label la_templateBox3;
-        private System.Windows.Forms.ListBox racialTraitBox;
         private System.Data.DataSet raceTraitData;
 
 
@@ -581,10 +576,6 @@ namespace WindowsFormsApplication1
         {
             raceCollection = new System.Data.DataSet(); //Clear away the previous existing data
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), "raceCollection.xml");
-
-            // Debug.WriteLine(Directory.GetCurrentDirectory());
-            // Debug.WriteLine(filePath);
-
             raceCollection.ReadXml(filePath);
 
             raceBox.DataSource = raceCollection;
@@ -616,7 +607,7 @@ namespace WindowsFormsApplication1
 
         private System.Data.DataTable dataTable1;
         private System.Windows.Forms.ComboBox raceBox;
-        private System.Windows.Forms.BindingSource bi_raceCollection;
+        private System.Windows.Forms.ListBox racialTraitBox;
     }
 }
 

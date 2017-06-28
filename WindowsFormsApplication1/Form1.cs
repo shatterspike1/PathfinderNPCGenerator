@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 
-namespace WindowsFormsApplication1
+namespace PathfinderNPCGenerator
 {
     public partial class PF : Form
     {
@@ -75,9 +75,35 @@ namespace WindowsFormsApplication1
             Debug.WriteLine("alignmentBox Changed:");
         }
 
+        bool racialTraitBox_SelectedIndexChanged_InUse = false;
+
         private void racialTraitBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!racialTraitBox_SelectedIndexChanged_InUse)
+            {
+                racialTraitBox_SelectedIndexChanged_InUse = true;
+                if (racialTraitBox.SelectedItems != null)
+                {
+                    for (int i = 0; i < racialTraitBox.SelectedItems.Count; i++)
+                    {
+                        Debug.WriteLine(((DataRowView)racialTraitBox.SelectedItems[i])[1]); //UGLY
+                    }
+                }
 
+                DataView dv = raceTraitData.Tables["raceTrait"].DefaultView;
+                dv.RowFilter = "raceName = '" + raceBox.SelectedValue.ToString() + "'";
+
+                for (int i = 0; i < racialTraitBox.SelectedItems.Count; i++)
+                {
+                    string replace = ((DataRowView)(racialTraitBox.SelectedItems[i]))[2].ToString();
+                    dv.RowFilter = "replaces <> '" + replace + "'";
+                }
+
+                racialTraitBox.DataSource = dv;
+                racialTraitBox_SelectedIndexChanged_InUse = false;
+            }
         }
+
+
     }
 }
